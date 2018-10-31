@@ -1,0 +1,895 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3EF0691021BDFD81AEC5EC13 /* Pods_SlowgaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5100F6D7D7ABD3E8FC860E56 /* Pods_SlowgaUITests.framework */; };
+		4A641F7B753D89FD4F61F9F4 /* Pods_SlowgaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1978612B46DE1F40ECCD1367 /* Pods_SlowgaTests.framework */; };
+		932637E9216D272C00017B72 /* MangaRetrievalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932637E8216D272C00017B72 /* MangaRetrievalService.swift */; };
+		93436727216B66BE00222E2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93436726216B66BE00222E2E /* AppDelegate.swift */; };
+		9343672F216B66BE00222E2E /* Slowga.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9343672D216B66BE00222E2E /* Slowga.xcdatamodeld */; };
+		93436731216B66C100222E2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93436730216B66C100222E2E /* Assets.xcassets */; };
+		93436734216B66C100222E2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93436732216B66C100222E2E /* LaunchScreen.storyboard */; };
+		9343673F216B66C100222E2E /* SlowgaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9343673E216B66C100222E2E /* SlowgaTests.swift */; };
+		9343674A216B66C100222E2E /* SlowgaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93436749216B66C100222E2E /* SlowgaUITests.swift */; };
+		9343675C216B6D6D00222E2E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9343675B216B6D6D00222E2E /* HomeViewController.swift */; };
+		9343675E216B6ECD00222E2E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9343675D216B6ECD00222E2E /* SearchViewController.swift */; };
+		93436762216B765E00222E2E /* MangaReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93436761216B765E00222E2E /* MangaReaderViewController.swift */; };
+		9343676A216B76DF00222E2E /* MangaReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93436769216B76DF00222E2E /* MangaReaderView.swift */; };
+		93436772216B7B8000222E2E /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93436771216B7B8000222E2E /* RootTabBarViewController.swift */; };
+		934AE91A218825C300F3533B /* MangaRetrievalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932637E8216D272C00017B72 /* MangaRetrievalService.swift */; };
+		934AE91B2188268100F3533B /* MangaSourceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935ACCCA216DC2BF00852588 /* MangaSourceAPI.swift */; };
+		934AE91E218827A800F3533B /* Manga.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93744EDA216CE87200E624F6 /* Manga.swift */; };
+		934AE91F218827A800F3533B /* MangaChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935ACCD3216DC6E000852588 /* MangaChapter.swift */; };
+		934AE920218827A800F3533B /* MangaPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935ACCDB216DD7B900852588 /* MangaPage.swift */; };
+		935ACCCB216DC2BF00852588 /* MangaSourceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935ACCCA216DC2BF00852588 /* MangaSourceAPI.swift */; };
+		935ACCD4216DC6E000852588 /* MangaChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935ACCD3216DC6E000852588 /* MangaChapter.swift */; };
+		935ACCD8216DD49400852588 /* MangaEdenSourceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935ACCD7216DD49400852588 /* MangaEdenSourceAPI.swift */; };
+		935ACCDC216DD7B900852588 /* MangaPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935ACCDB216DD7B900852588 /* MangaPage.swift */; };
+		935ACCE1216E2E6600852588 /* MangaEdenSourceAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935ACCE0216E2E6600852588 /* MangaEdenSourceAPITest.swift */; };
+		93744EDB216CE87200E624F6 /* Manga.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93744EDA216CE87200E624F6 /* Manga.swift */; };
+		93744EE3216CF45800E624F6 /* MangaTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93744EE2216CF45800E624F6 /* MangaTest.swift */; };
+		937AC7E52188489C00726BA2 /* Slowga.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9343672D216B66BE00222E2E /* Slowga.xcdatamodeld */; };
+		937AC7E721885F0200726BA2 /* SearchResultsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937AC7E621885F0200726BA2 /* SearchResultsCollectionViewController.swift */; };
+		937AC7E92188616C00726BA2 /* MangaCoverViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937AC7E82188616C00726BA2 /* MangaCoverViewCell.swift */; };
+		937AC7EF2188C7C300726BA2 /* MangaCover+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937AC7ED2188C7C300726BA2 /* MangaCover+CoreDataClass.swift */; };
+		93C9F5D2216FC076009228E4 /* MangaRetrievalServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C9F5D1216FC076009228E4 /* MangaRetrievalServiceTest.swift */; };
+		93C9F5D5216FC09D009228E4 /* MangaSourceAPIMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C9F5D4216FC09D009228E4 /* MangaSourceAPIMock.swift */; };
+		93C9F5D7216FC1D6009228E4 /* CoreDataMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C9F5D6216FC1D6009228E4 /* CoreDataMock.swift */; };
+		93C9F5E6216FD19D009228E4 /* MangaEdenSourceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935ACCD7216DD49400852588 /* MangaEdenSourceAPI.swift */; };
+		E77AA63DEEF52B01A4E33FA1 /* Pods_Slowga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD7ECEB3DB25AAC8380F027 /* Pods_Slowga.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9343673B216B66C100222E2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9343671B216B66BE00222E2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93436722216B66BE00222E2E;
+			remoteInfo = Slowga;
+		};
+		93436746216B66C100222E2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9343671B216B66BE00222E2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93436722216B66BE00222E2E;
+			remoteInfo = Slowga;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07798B0A1C8C2C93B94829BD /* Pods-Slowga.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slowga.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Slowga/Pods-Slowga.debug.xcconfig"; sourceTree = "<group>"; };
+		1978612B46DE1F40ECCD1367 /* Pods_SlowgaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlowgaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49D9D9611FCD08A418F8F1D6 /* Pods-SlowgaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowgaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlowgaUITests/Pods-SlowgaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4DD7ECEB3DB25AAC8380F027 /* Pods_Slowga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Slowga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5100F6D7D7ABD3E8FC860E56 /* Pods_SlowgaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlowgaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A4A6208B522E85FFF1651D5 /* Pods-SlowgaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowgaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlowgaTests/Pods-SlowgaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5F5C057839679EFDE6AC4D27 /* Pods-SlowgaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowgaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlowgaUITests/Pods-SlowgaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6165928D1F28AD49E448A67F /* Pods-Slowga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slowga.release.xcconfig"; path = "Pods/Target Support Files/Pods-Slowga/Pods-Slowga.release.xcconfig"; sourceTree = "<group>"; };
+		932637E8216D272C00017B72 /* MangaRetrievalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaRetrievalService.swift; sourceTree = "<group>"; };
+		93436723216B66BE00222E2E /* Slowga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slowga.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		93436726216B66BE00222E2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9343672E216B66BE00222E2E /* Slowga.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Slowga.xcdatamodel; sourceTree = "<group>"; };
+		93436730216B66C100222E2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		93436733216B66C100222E2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		93436735216B66C100222E2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9343673A216B66C100222E2E /* SlowgaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlowgaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9343673E216B66C100222E2E /* SlowgaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlowgaTests.swift; sourceTree = "<group>"; };
+		93436740216B66C100222E2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93436745216B66C100222E2E /* SlowgaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlowgaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		93436749216B66C100222E2E /* SlowgaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlowgaUITests.swift; sourceTree = "<group>"; };
+		9343674B216B66C100222E2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9343675B216B6D6D00222E2E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9343675D216B6ECD00222E2E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		93436761216B765E00222E2E /* MangaReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaReaderViewController.swift; sourceTree = "<group>"; };
+		93436769216B76DF00222E2E /* MangaReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaReaderView.swift; sourceTree = "<group>"; };
+		93436771216B7B8000222E2E /* RootTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
+		935ACCCA216DC2BF00852588 /* MangaSourceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaSourceAPI.swift; sourceTree = "<group>"; };
+		935ACCD3216DC6E000852588 /* MangaChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaChapter.swift; sourceTree = "<group>"; };
+		935ACCD7216DD49400852588 /* MangaEdenSourceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaEdenSourceAPI.swift; sourceTree = "<group>"; };
+		935ACCDB216DD7B900852588 /* MangaPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaPage.swift; sourceTree = "<group>"; };
+		935ACCE0216E2E6600852588 /* MangaEdenSourceAPITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaEdenSourceAPITest.swift; sourceTree = "<group>"; };
+		93744EDA216CE87200E624F6 /* Manga.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manga.swift; sourceTree = "<group>"; };
+		93744EE2216CF45800E624F6 /* MangaTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaTest.swift; sourceTree = "<group>"; };
+		937AC7E621885F0200726BA2 /* SearchResultsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsCollectionViewController.swift; sourceTree = "<group>"; };
+		937AC7E82188616C00726BA2 /* MangaCoverViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaCoverViewCell.swift; sourceTree = "<group>"; };
+		937AC7ED2188C7C300726BA2 /* MangaCover+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MangaCover+CoreDataClass.swift"; sourceTree = "<group>"; };
+		93C9F5D1216FC076009228E4 /* MangaRetrievalServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaRetrievalServiceTest.swift; sourceTree = "<group>"; };
+		93C9F5D4216FC09D009228E4 /* MangaSourceAPIMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaSourceAPIMock.swift; sourceTree = "<group>"; };
+		93C9F5D6216FC1D6009228E4 /* CoreDataMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMock.swift; sourceTree = "<group>"; };
+		CF8B0B325F5A34675D809A70 /* Pods-SlowgaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowgaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlowgaTests/Pods-SlowgaTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		93436720216B66BE00222E2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E77AA63DEEF52B01A4E33FA1 /* Pods_Slowga.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93436737216B66C100222E2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A641F7B753D89FD4F61F9F4 /* Pods_SlowgaTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93436742216B66C100222E2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EF0691021BDFD81AEC5EC13 /* Pods_SlowgaUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		553995FC26AD5A94CAD2EAB7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4DD7ECEB3DB25AAC8380F027 /* Pods_Slowga.framework */,
+				1978612B46DE1F40ECCD1367 /* Pods_SlowgaTests.framework */,
+				5100F6D7D7ABD3E8FC860E56 /* Pods_SlowgaUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9343671A216B66BE00222E2E = {
+			isa = PBXGroup;
+			children = (
+				93436725216B66BE00222E2E /* Slowga */,
+				9343673D216B66C100222E2E /* SlowgaTests */,
+				93436748216B66C100222E2E /* SlowgaUITests */,
+				93436724216B66BE00222E2E /* Products */,
+				D38C4C05ED367C13C74E8487 /* Pods */,
+				553995FC26AD5A94CAD2EAB7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		93436724216B66BE00222E2E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				93436723216B66BE00222E2E /* Slowga.app */,
+				9343673A216B66C100222E2E /* SlowgaTests.xctest */,
+				93436745216B66C100222E2E /* SlowgaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		93436725216B66BE00222E2E /* Slowga */ = {
+			isa = PBXGroup;
+			children = (
+				935ACCCE216DC3BC00852588 /* API */,
+				93744EE5216CF5BE00E624F6 /* Services */,
+				93744EDE216CF32A00E624F6 /* Pages */,
+				9343675A216B6D1400222E2E /* Store */,
+				93436757216B6CE400222E2E /* Model */,
+				93436726216B66BE00222E2E /* AppDelegate.swift */,
+				93436730216B66C100222E2E /* Assets.xcassets */,
+				93436732216B66C100222E2E /* LaunchScreen.storyboard */,
+				93436735216B66C100222E2E /* Info.plist */,
+			);
+			path = Slowga;
+			sourceTree = "<group>";
+		};
+		9343673D216B66C100222E2E /* SlowgaTests */ = {
+			isa = PBXGroup;
+			children = (
+				93C9F5D3216FC07C009228E4 /* Services */,
+				935ACCDF216E2E4A00852588 /* API */,
+				93744EE4216CF45E00E624F6 /* Model */,
+				9343673E216B66C100222E2E /* SlowgaTests.swift */,
+				93436740216B66C100222E2E /* Info.plist */,
+			);
+			path = SlowgaTests;
+			sourceTree = "<group>";
+		};
+		93436748216B66C100222E2E /* SlowgaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				93436749216B66C100222E2E /* SlowgaUITests.swift */,
+				9343674B216B66C100222E2E /* Info.plist */,
+			);
+			path = SlowgaUITests;
+			sourceTree = "<group>";
+		};
+		93436757216B6CE400222E2E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				937AC7ED2188C7C300726BA2 /* MangaCover+CoreDataClass.swift */,
+				93744EDA216CE87200E624F6 /* Manga.swift */,
+				935ACCD3216DC6E000852588 /* MangaChapter.swift */,
+				935ACCDB216DD7B900852588 /* MangaPage.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9343675A216B6D1400222E2E /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				9343672D216B66BE00222E2E /* Slowga.xcdatamodeld */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		935ACCCE216DC3BC00852588 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				935ACCCA216DC2BF00852588 /* MangaSourceAPI.swift */,
+				935ACCD7216DD49400852588 /* MangaEdenSourceAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		935ACCDF216E2E4A00852588 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				935ACCE0216E2E6600852588 /* MangaEdenSourceAPITest.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		93744EDE216CF32A00E624F6 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				93744EE1216CF34F00E624F6 /* Reader */,
+				93744EDF216CF33C00E624F6 /* Home */,
+				93744EE0216CF34500E624F6 /* Search */,
+				93436771216B7B8000222E2E /* RootTabBarViewController.swift */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		93744EDF216CF33C00E624F6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9343675B216B6D6D00222E2E /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		93744EE0216CF34500E624F6 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				9343675D216B6ECD00222E2E /* SearchViewController.swift */,
+				937AC7E621885F0200726BA2 /* SearchResultsCollectionViewController.swift */,
+				937AC7E82188616C00726BA2 /* MangaCoverViewCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		93744EE1216CF34F00E624F6 /* Reader */ = {
+			isa = PBXGroup;
+			children = (
+				93436769216B76DF00222E2E /* MangaReaderView.swift */,
+				93436761216B765E00222E2E /* MangaReaderViewController.swift */,
+			);
+			path = Reader;
+			sourceTree = "<group>";
+		};
+		93744EE4216CF45E00E624F6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				93744EE2216CF45800E624F6 /* MangaTest.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		93744EE5216CF5BE00E624F6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				932637E8216D272C00017B72 /* MangaRetrievalService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		93C9F5D3216FC07C009228E4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				93C9F5D1216FC076009228E4 /* MangaRetrievalServiceTest.swift */,
+				93C9F5D4216FC09D009228E4 /* MangaSourceAPIMock.swift */,
+				93C9F5D6216FC1D6009228E4 /* CoreDataMock.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D38C4C05ED367C13C74E8487 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				07798B0A1C8C2C93B94829BD /* Pods-Slowga.debug.xcconfig */,
+				6165928D1F28AD49E448A67F /* Pods-Slowga.release.xcconfig */,
+				5A4A6208B522E85FFF1651D5 /* Pods-SlowgaTests.debug.xcconfig */,
+				CF8B0B325F5A34675D809A70 /* Pods-SlowgaTests.release.xcconfig */,
+				49D9D9611FCD08A418F8F1D6 /* Pods-SlowgaUITests.debug.xcconfig */,
+				5F5C057839679EFDE6AC4D27 /* Pods-SlowgaUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		93436722216B66BE00222E2E /* Slowga */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9343674E216B66C100222E2E /* Build configuration list for PBXNativeTarget "Slowga" */;
+			buildPhases = (
+				CC326CF3D75447AEAE926643 /* [CP] Check Pods Manifest.lock */,
+				9343671F216B66BE00222E2E /* Sources */,
+				93436720216B66BE00222E2E /* Frameworks */,
+				93436721216B66BE00222E2E /* Resources */,
+				84CE5C79604C26413DBFE09E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Slowga;
+			productName = Slowga;
+			productReference = 93436723216B66BE00222E2E /* Slowga.app */;
+			productType = "com.apple.product-type.application";
+		};
+		93436739216B66C100222E2E /* SlowgaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93436751216B66C100222E2E /* Build configuration list for PBXNativeTarget "SlowgaTests" */;
+			buildPhases = (
+				C106140D6B54C728A9E378F0 /* [CP] Check Pods Manifest.lock */,
+				93436736216B66C100222E2E /* Sources */,
+				93436737216B66C100222E2E /* Frameworks */,
+				93436738216B66C100222E2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9343673C216B66C100222E2E /* PBXTargetDependency */,
+			);
+			name = SlowgaTests;
+			productName = SlowgaTests;
+			productReference = 9343673A216B66C100222E2E /* SlowgaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		93436744216B66C100222E2E /* SlowgaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93436754216B66C100222E2E /* Build configuration list for PBXNativeTarget "SlowgaUITests" */;
+			buildPhases = (
+				314F1153F36263B236835B5D /* [CP] Check Pods Manifest.lock */,
+				93436741216B66C100222E2E /* Sources */,
+				93436742216B66C100222E2E /* Frameworks */,
+				93436743216B66C100222E2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				93436747216B66C100222E2E /* PBXTargetDependency */,
+			);
+			name = SlowgaUITests;
+			productName = SlowgaUITests;
+			productReference = 93436745216B66C100222E2E /* SlowgaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9343671B216B66BE00222E2E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Unusep Productions";
+				TargetAttributes = {
+					93436722216B66BE00222E2E = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					93436739216B66C100222E2E = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 93436722216B66BE00222E2E;
+					};
+					93436744216B66C100222E2E = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 93436722216B66BE00222E2E;
+					};
+				};
+			};
+			buildConfigurationList = 9343671E216B66BE00222E2E /* Build configuration list for PBXProject "Slowga" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9343671A216B66BE00222E2E;
+			productRefGroup = 93436724216B66BE00222E2E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				93436722216B66BE00222E2E /* Slowga */,
+				93436739216B66C100222E2E /* SlowgaTests */,
+				93436744216B66C100222E2E /* SlowgaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		93436721216B66BE00222E2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93436734216B66C100222E2E /* LaunchScreen.storyboard in Resources */,
+				93436731216B66C100222E2E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93436738216B66C100222E2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93436743216B66C100222E2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		314F1153F36263B236835B5D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SlowgaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84CE5C79604C26413DBFE09E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Slowga/Pods-Slowga-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Slowga/Pods-Slowga-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C106140D6B54C728A9E378F0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SlowgaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC326CF3D75447AEAE926643 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Slowga-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9343671F216B66BE00222E2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				937AC7EF2188C7C300726BA2 /* MangaCover+CoreDataClass.swift in Sources */,
+				935ACCCB216DC2BF00852588 /* MangaSourceAPI.swift in Sources */,
+				93436727216B66BE00222E2E /* AppDelegate.swift in Sources */,
+				9343672F216B66BE00222E2E /* Slowga.xcdatamodeld in Sources */,
+				935ACCDC216DD7B900852588 /* MangaPage.swift in Sources */,
+				932637E9216D272C00017B72 /* MangaRetrievalService.swift in Sources */,
+				935ACCD8216DD49400852588 /* MangaEdenSourceAPI.swift in Sources */,
+				93744EDB216CE87200E624F6 /* Manga.swift in Sources */,
+				9343676A216B76DF00222E2E /* MangaReaderView.swift in Sources */,
+				93436772216B7B8000222E2E /* RootTabBarViewController.swift in Sources */,
+				935ACCD4216DC6E000852588 /* MangaChapter.swift in Sources */,
+				9343675E216B6ECD00222E2E /* SearchViewController.swift in Sources */,
+				937AC7E721885F0200726BA2 /* SearchResultsCollectionViewController.swift in Sources */,
+				93436762216B765E00222E2E /* MangaReaderViewController.swift in Sources */,
+				9343675C216B6D6D00222E2E /* HomeViewController.swift in Sources */,
+				937AC7E92188616C00726BA2 /* MangaCoverViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93436736216B66C100222E2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93C9F5D2216FC076009228E4 /* MangaRetrievalServiceTest.swift in Sources */,
+				934AE91A218825C300F3533B /* MangaRetrievalService.swift in Sources */,
+				934AE920218827A800F3533B /* MangaPage.swift in Sources */,
+				93C9F5D7216FC1D6009228E4 /* CoreDataMock.swift in Sources */,
+				93C9F5E6216FD19D009228E4 /* MangaEdenSourceAPI.swift in Sources */,
+				93C9F5D5216FC09D009228E4 /* MangaSourceAPIMock.swift in Sources */,
+				934AE91E218827A800F3533B /* Manga.swift in Sources */,
+				934AE91B2188268100F3533B /* MangaSourceAPI.swift in Sources */,
+				934AE91F218827A800F3533B /* MangaChapter.swift in Sources */,
+				9343673F216B66C100222E2E /* SlowgaTests.swift in Sources */,
+				93744EE3216CF45800E624F6 /* MangaTest.swift in Sources */,
+				937AC7E52188489C00726BA2 /* Slowga.xcdatamodeld in Sources */,
+				935ACCE1216E2E6600852588 /* MangaEdenSourceAPITest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93436741216B66C100222E2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9343674A216B66C100222E2E /* SlowgaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9343673C216B66C100222E2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93436722216B66BE00222E2E /* Slowga */;
+			targetProxy = 9343673B216B66C100222E2E /* PBXContainerItemProxy */;
+		};
+		93436747216B66C100222E2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93436722216B66BE00222E2E /* Slowga */;
+			targetProxy = 93436746216B66C100222E2E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		93436732216B66C100222E2E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				93436733216B66C100222E2E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9343674C216B66C100222E2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9343674D216B66C100222E2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9343674F216B66C100222E2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07798B0A1C8C2C93B94829BD /* Pods-Slowga.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E9JATFG3GC;
+				INFOPLIST_FILE = Slowga/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.unusep.Slowga;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		93436750216B66C100222E2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6165928D1F28AD49E448A67F /* Pods-Slowga.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E9JATFG3GC;
+				INFOPLIST_FILE = Slowga/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.unusep.Slowga;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		93436752216B66C100222E2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A4A6208B522E85FFF1651D5 /* Pods-SlowgaTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E9JATFG3GC;
+				INFOPLIST_FILE = SlowgaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.unusep.SlowgaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Slowga.app/Slowga";
+			};
+			name = Debug;
+		};
+		93436753216B66C100222E2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF8B0B325F5A34675D809A70 /* Pods-SlowgaTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E9JATFG3GC;
+				INFOPLIST_FILE = SlowgaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.unusep.SlowgaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Slowga.app/Slowga";
+			};
+			name = Release;
+		};
+		93436755216B66C100222E2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49D9D9611FCD08A418F8F1D6 /* Pods-SlowgaUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E9JATFG3GC;
+				INFOPLIST_FILE = SlowgaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.unusep.SlowgaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Slowga;
+			};
+			name = Debug;
+		};
+		93436756216B66C100222E2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F5C057839679EFDE6AC4D27 /* Pods-SlowgaUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E9JATFG3GC;
+				INFOPLIST_FILE = SlowgaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.unusep.SlowgaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Slowga;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9343671E216B66BE00222E2E /* Build configuration list for PBXProject "Slowga" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9343674C216B66C100222E2E /* Debug */,
+				9343674D216B66C100222E2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9343674E216B66C100222E2E /* Build configuration list for PBXNativeTarget "Slowga" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9343674F216B66C100222E2E /* Debug */,
+				93436750216B66C100222E2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93436751216B66C100222E2E /* Build configuration list for PBXNativeTarget "SlowgaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93436752216B66C100222E2E /* Debug */,
+				93436753216B66C100222E2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93436754216B66C100222E2E /* Build configuration list for PBXNativeTarget "SlowgaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93436755216B66C100222E2E /* Debug */,
+				93436756216B66C100222E2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9343672D216B66BE00222E2E /* Slowga.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9343672E216B66BE00222E2E /* Slowga.xcdatamodel */,
+			);
+			currentVersion = 9343672E216B66BE00222E2E /* Slowga.xcdatamodel */;
+			path = Slowga.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9343671B216B66BE00222E2E /* Project object */;
+}
