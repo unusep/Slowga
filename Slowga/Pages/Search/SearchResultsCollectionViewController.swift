@@ -44,13 +44,6 @@ class SearchResultsCollectionViewController: UICollectionViewController, UIColle
         // set delegates
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
-        
-        // layout
-        self.setupViews()
-    }
-    
-    func setupViews() {
-        
     }
     
 
