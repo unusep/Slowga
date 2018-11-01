@@ -32,19 +32,8 @@ class MangaCoverViewCell: UICollectionViewCell {
         super.init(coder: aDecoder)
     }
     
-    public func configure(with mangaCover: MangaCover, service: MangaRetrievalService) {
+    public func configure(with mangaCover: MangaCover) {
         self.mangaCover = mangaCover
-        service.getCoverImage(for: mangaCover) { (imagePath) in
-            DispatchQueue.main.async {
-                var image: UIImage
-                if let path = imagePath {
-                    image = UIImage(contentsOfFile: path) ?? UIImage(named: placeHolderImageName)!
-                } else {
-                    image = UIImage(named: placeHolderImageName)!
-                }
-                
-                self.imageView.image = image
-            }
-        }
+        self.imageView.image = UIImage(named: placeHolderImageName)
     }
 }

@@ -8,8 +8,10 @@
 
 import Foundation
 import CoreData
-import Alamofire
+import os.log
 
+
+typealias ImageFilePath = String
 
 class MangaRetrievalService {
     var source: MangaSourceAPI
@@ -20,43 +22,66 @@ class MangaRetrievalService {
         self.context = context
     }
     
-    // retrieves cover image.
+    // retrieves cover image
+    // calls callback with the name of the file
     // downloads and saves if not already downloaded
-    public func getCoverImage(for mangaCover: MangaCover, onComplete callback: @escaping ((String?) -> Void)) {
-        if let imagePath = mangaCover.imageFilePath {
-            callback(imagePath)
-        } else {
-            // we have not already downloaded the manga cover.
-            // download it and save the mangacover
-            if let imageUrl = mangaCover.imageUrl {
-                let destination: DownloadRequest.DownloadFileDestination = { _, _ in
-                    let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-                    let fileURL = documentsURL.appendingPathComponent(imageUrl)
-                    
-                    return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
-                }
-                Alamofire.download(imageUrl, to: destination).response { response in
-                    if response.error == nil, let imagePath = response.destinationURL?.path {
-                        // successfully downloaded. update image path and save
-                        mangaCover.imageIsDownloaded = true
-                        DispatchQueue.main.async {
-                            do {
-                                try self.context.save()
-                            } catch _ {
-                                // TODO handle error if we cannot save
-                            }
-                        }
-                        callback(imagePath)
-                    } else {
-                        callback(nil)
-                    }
-                }
-            } else {
-                // manga cover does not have an image url.
-                // TODO: try to update manga cover
-                callback(nil)
-            }
+    public func getCoverImage(for mangaCover: MangaCover, onComplete callback: @escaping ((ImageFilePath?) -> Void)) {
+        // use cached manga cover if already donwloaded
+        if mangaCover.isImageDownloaded {
+            os_log("Image path already stored", type: .debug)
+            callback(mangaCover.getLocalImageFilePath())
+            return
         }
+        
+        // otherwise, attempt to download the image
+        guard let imageUrl = mangaCover.imageUrl, let url = URL(string: imageUrl) else {
+            os_log("This manga does not have a valid image url", type: .debug)
+            callback(nil)
+            return
+        }
+        URLSession.shared.downloadTask(with: url) { (location: URL?, response: URLResponse?, error: Error?) in
+            if error != nil {
+                // TODO: handle errors
+                os_log("%@", type: .error, error!.localizedDescription)
+                callback(nil)
+                return
+            }
+            guard
+                let contentLength = response?.expectedContentLength, contentLength > 0,
+                let statusCode = (response as? HTTPURLResponse)?.statusCode,
+                200 <= statusCode, statusCode < 300
+                else {
+                // TODO: handle errors
+                    os_log("Failed to download. Either content length is 0 or http response is not within acceptable range.", type: .debug)
+                callback(nil)
+                return
+            }
+            guard
+                let tempLocation = location,
+                let localFilePath = mangaCover.getLocalImageFilePath()
+                else {
+                    // TODO: handle errors
+                    os_log("Failed to get valid URL from mangaCover image file path", type: .debug)
+                    callback(nil)
+                    return
+            }
+            
+            // successfully downloaded
+            do {
+                let localFileURL = URL(fileURLWithPath: localFilePath)
+                let parentDirectory = localFileURL.deletingLastPathComponent()
+                if !FileManager.default.fileExists(atPath: parentDirectory.path) {
+                    try FileManager.default.createDirectory(at: parentDirectory, withIntermediateDirectories: true, attributes: nil)
+                }
+                try FileManager.default.moveItem(at: tempLocation, to: localFileURL)
+                mangaCover.isImageDownloaded = true
+                callback(localFilePath)
+            } catch let e {
+                // TODO: handle errors
+                callback(nil)
+                os_log("%@", type: .error, e.localizedDescription)
+            }
+        }.resume()
     }
     
     public func search(for term: String?, onComplete callback: (([MangaCover]) -> Void)) {
@@ -99,6 +124,7 @@ class MangaRetrievalService {
                     mangaCover.id = mcr.id
                     mangaCover.imageUrl = mcr.imageUrl
                     mangaCover.title = mcr.title
+                    mangaCover.hits = Int64(mcr.hits ?? 0)
                     return mangaCover
                 }
                 do {

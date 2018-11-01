@@ -11,15 +11,13 @@ import CoreData
 
 
 public class MangaCover: NSManagedObject {
-    var imageFilePath: String? {
-        get {
-            if imageIsDownloaded, let file = imageUrl {
-                let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-                let fileURL = documentsURL.appendingPathComponent(file)
-                return fileURL.path
-            } else {
-                return nil
-            }
+    public func getLocalImageFilePath() -> String? {
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        guard let title = self.title else {
+            return nil
         }
+        let pathComponent = String(format: "Media/Manga/%@/%@", title, "cover_image")
+        let fileURL = documentsURL.appendingPathComponent(pathComponent)
+        return fileURL.path
     }
 }

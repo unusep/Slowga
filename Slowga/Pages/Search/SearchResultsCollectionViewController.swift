@@ -9,13 +9,13 @@
 import UIKit
 
 private let reuseIdentifier = "MangaCoverCell"
-private let reuseHeaderIdentifier = "HeaderView"
 
 private let padding: CGFloat = 8
 private let itemsPerRow: CGFloat = 3
 
 class SearchResultsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     var data: [MangaCover] = []
+    
     let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
     var mangaRetrievalService: MangaRetrievalService!
     
@@ -40,7 +40,6 @@ class SearchResultsCollectionViewController: UICollectionViewController, UIColle
 
         // Register cell classes
         self.collectionView!.register(MangaCoverViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        self.collectionView!.register(SearchResultsSectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: reuseHeaderIdentifier)
         
         // set delegates
         self.collectionView.dataSource = self
@@ -72,20 +71,25 @@ class SearchResultsCollectionViewController: UICollectionViewController, UIColle
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MangaCoverViewCell
     
         // Configure the cell
-        cell.configure(with: data[indexPath.row], service: mangaRetrievalService)
+        let mangaCover = data[indexPath.row]
+        cell.configure(with: mangaCover)
         
+        mangaRetrievalService.getCoverImage(for: mangaCover) { imageFilePath in
+            DispatchQueue.main.async {
+                if let unwrappedImageFilePath = imageFilePath,
+                    let image = UIImage(contentsOfFile: unwrappedImageFilePath) {
+                    cell.imageView.image = image
+                } else {
+                    self.data.removeAll { mc in
+                        return mc.objectID == mangaCover.objectID
+                    }
+                    self.collectionView.reloadData()
+                }
+            }
+        }
         return cell
     }
     
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if kind == UICollectionView.elementKindSectionHeader {
-            let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: reuseHeaderIdentifier, for: indexPath) as! SearchResultsSectionHeaderView
-            view.configure(withTitle: "MangaEden")
-            return view
-        }
-        return UICollectionReusableView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-    }
-
     // MARK: UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {

@@ -22,21 +22,27 @@ class MangaEdenSourceAPI: MangaSourceAPI {
             case .success:
                 if let json = response.result.value as? [String: Any] {
                     let mangaJsonList = json["manga"] as! [[String: Any]]
-                    let mangaCovers = mangaJsonList.map { (mangaJson) -> MangaCoverRaw in
-                        let title = mangaJson["t"] as? String
-                        let imageUrl = mangaJson["im"] as? String
-                        let id = mangaJson["i"] as? String
-                        let hits = mangaJson["h"] as? Int
+                    let mangaCovers = mangaJsonList
+                        .filter { mangaJson in
+                            return mangaJson["t"] != nil && mangaJson["i"] != nil
+                        }
+                        .map { (mangaJson) -> MangaCoverRaw in
+                            // id and title are guaranteed
+                            let title = mangaJson["t"] as! String
+                            let id = mangaJson["i"] as! String
+                            
+                            let imageUrl = mangaJson["im"] as? String
+                            let hits = mangaJson["h"] as? Int
 
-                        return MangaCoverRaw(
-                            title: title,
-                            imageUrl: imageUrl.map({ (url) -> String in
-                                self.baseImageUrl + url
-                            }),
-                            id: id,
-                            hits: hits
-                        )
-                    }
+                            return MangaCoverRaw(
+                                title: title,
+                                imageUrl: imageUrl.map({ (url) -> String in
+                                    self.baseImageUrl + url
+                                }),
+                                id: id,
+                                hits: hits
+                            )
+                        }
                     callback(mangaCovers)
                 }
             case .failure(_): break
