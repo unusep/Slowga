@@ -13,6 +13,9 @@ import os.log
 
 typealias ImageFilePath = String
 
+// This class is in charge of retrieving all manga-related information from
+// a) core data OR
+// b) online (given its source) and cache into core data
 class MangaRetrievalService {
     var source: MangaSourceAPI
     var context: NSManagedObjectContext
@@ -81,6 +84,35 @@ class MangaRetrievalService {
                 os_log("%@", type: .error, e.localizedDescription)
             }
         }.resume()
+    }
+    
+    public func searchCache(for term: String?, onComplete callback: (([MangaCover]) -> Void)) {
+        if let term = term {
+            let request: NSFetchRequest<MangaCover> = MangaCover.fetchRequest()
+            
+            let predicateContainsTerm = NSPredicate(format: "title CONTAINS[cd] %@", term)
+            // filter for covers with images
+            let predicateHasImage = NSPredicate(format: "imageUrl != nil")
+            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicateHasImage, predicateContainsTerm])
+            
+            let sort = NSSortDescriptor(key: #keyPath(MangaCover.hits), ascending: false)
+            request.sortDescriptors = [sort]
+            do {
+                let mangaCovers = try context.fetch(request)
+                callback(mangaCovers.filter { mc in
+                    if let imageFilePath = mc.getLocalImageFilePath() {
+                        return FileManager.default.fileExists(atPath: imageFilePath)
+                    } else {
+                        return false
+                    }
+                })
+            } catch let err {
+                os_log("%@", type: .error, err.localizedDescription)
+                // TODO: handle the error if we cannot retrieve stuff
+            }
+        } else {
+            callback([])
+        }
     }
     
     public func search(for term: String?, onComplete callback: (([MangaCover]) -> Void)) {

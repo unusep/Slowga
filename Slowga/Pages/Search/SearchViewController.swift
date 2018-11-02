@@ -16,14 +16,17 @@ class SearchViewController: UINavigationController, UINavigationControllerDelega
     var searchResultsCollectionViewController: SearchResultsCollectionViewController!
     
     func updateSearchResults(for searchController: UISearchController) {
-        mangaRetrievalService.search(for: searchController.searchBar.text) { (mangaCovers) in
+        mangaRetrievalService.searchCache(for: searchController.searchBar.text) { (mangaCovers) in
             searchResultsCollectionViewController.data = mangaCovers
             searchResultsCollectionViewController.collectionView.reloadData()
         }
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        // do nothing
+        mangaRetrievalService.search(for: searchBar.text) { (mangaCovers) in
+            searchResultsCollectionViewController.data = mangaCovers
+            searchResultsCollectionViewController.collectionView.reloadData()
+        }
     }
 
     override func viewDidLoad() {
