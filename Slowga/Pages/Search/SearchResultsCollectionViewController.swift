@@ -44,6 +44,7 @@ class SearchResultsCollectionViewController: UICollectionViewController, UIColle
         // set delegates
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
+        
     }
     
 
@@ -114,6 +115,15 @@ class SearchResultsCollectionViewController: UICollectionViewController, UIColle
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.init(top: 8, left: 8, bottom: 8, right: 8)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let mangaCover = data[indexPath.row]
+        let mangaDetailViewController = MangaDetailViewController(for: mangaCover)
+        mangaDetailViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        mangaDetailViewController.modalPresentationCapturesStatusBarAppearance = true
+        
+        self.navigationController?.present(mangaDetailViewController, animated: true)
     }
     
     /*

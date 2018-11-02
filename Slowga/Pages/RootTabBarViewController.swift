@@ -41,6 +41,7 @@ class RootTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         searchViewController.title = "Search"
         searchViewController.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarItem.SystemItem.search, tag: 0)
         
+        // TODO: only show dummy current reading vc if we are currently reading a manga
         self.viewControllers = [homeViewController, dummyCurrentReadingVc, searchViewController]
         
         // default view controller

@@ -52,6 +52,9 @@ class SearchViewController: UINavigationController, UINavigationControllerDelega
         searchController.searchBar.placeholder = "Manga"
         
         self.setViewControllers([searchResultsCollectionViewController], animated: false)
+        
+        // set presentation context
+        self.definesPresentationContext = true
     }
     
 }

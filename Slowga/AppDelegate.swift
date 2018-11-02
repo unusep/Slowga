@@ -9,10 +9,15 @@
 import UIKit
 import CoreData
 
+
+let PRIMARY_COLOR = UIColor.white
+let SECONDARY_COLOR = UIColor.gray
+let ACCENTUATE_COLOR = UIColor.black
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
+    
     
     // services
     lazy var mangaRetrievalService: MangaRetrievalService = {
@@ -24,6 +29,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // set tab bar colors
+        UITabBar.appearance().tintColor = SECONDARY_COLOR
+        UITabBar.appearance().barTintColor = PRIMARY_COLOR
+        UITabBarItem.appearance().setTitleTextAttributes(
+            [NSAttributedString.Key.foregroundColor: SECONDARY_COLOR],
+            for: UIControl.State.normal
+        )
+        UITabBarItem.appearance().setTitleTextAttributes(
+            [NSAttributedString.Key.foregroundColor: ACCENTUATE_COLOR],
+            for: UIControl.State.selected
+        )
+        
+        // set navigation bar colors
+        UINavigationBar.appearance().barTintColor = PRIMARY_COLOR
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = RootTabBarViewController()
         window?.makeKeyAndVisible()

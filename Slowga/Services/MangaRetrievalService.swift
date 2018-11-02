@@ -27,8 +27,8 @@ class MangaRetrievalService {
     // downloads and saves if not already downloaded
     public func getCoverImage(for mangaCover: MangaCover, onComplete callback: @escaping ((ImageFilePath?) -> Void)) {
         // use cached manga cover if already donwloaded
-        if mangaCover.isImageDownloaded {
-            os_log("Image path already stored", type: .debug)
+        if let imageFilePath = mangaCover.getLocalImageFilePath(), FileManager.default.fileExists(atPath: imageFilePath) {
+            os_log("Image path already stored", type: .info)
             callback(mangaCover.getLocalImageFilePath())
             return
         }
@@ -74,7 +74,6 @@ class MangaRetrievalService {
                     try FileManager.default.createDirectory(at: parentDirectory, withIntermediateDirectories: true, attributes: nil)
                 }
                 try FileManager.default.moveItem(at: tempLocation, to: localFileURL)
-                mangaCover.isImageDownloaded = true
                 callback(localFilePath)
             } catch let e {
                 // TODO: handle errors
@@ -98,7 +97,8 @@ class MangaRetrievalService {
             do {
                 let mangaCovers = try context.fetch(request)
                 callback(mangaCovers)
-            } catch _ {
+            } catch let err {
+                os_log("%@", type: .error, err.localizedDescription)
                 // TODO: handle the error if we cannot retrieve stuff
             }
         } else {
