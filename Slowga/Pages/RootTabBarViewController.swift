@@ -11,7 +11,7 @@ import UIKit
 class RootTabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     let dummyCurrentReadingVc = UIViewController()
-    let mangaReaderController = MangaReaderViewController()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,9 @@ class RootTabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if viewController == dummyCurrentReadingVc {
-            present(mangaReaderController, animated: true)
+            let mangaReaderController = MangaReaderViewController()
+            mangaReaderController.modalPresentationStyle = .overFullScreen
+            self.present(mangaReaderController, animated: true)
             return false
         } else {
             return true
@@ -32,8 +34,6 @@ class RootTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         // initialise each tab
         let homeViewController = HomeViewController()
         homeViewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "home"), tag: 0)
-        
-        mangaReaderController.modalPresentationStyle = .overFullScreen
         
         dummyCurrentReadingVc.title = "Reading"
         
@@ -46,9 +46,7 @@ class RootTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         
         // default view controller
         self.selectedViewController = homeViewController
-        
-        self.modalPresentationStyle = .overFullScreen
-        
+
         // tab bar controller delegate
         self.delegate = self
     }

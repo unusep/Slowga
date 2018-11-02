@@ -40,14 +40,14 @@ class MangaReaderViewController: UIViewController {
         navigationBar.widthAnchor.constraint(equalTo: safeArea.widthAnchor).isActive = true
         
         // styling navigation bar
-        navigationBar.barTintColor = UIColor.white
+        navigationBar.barTintColor = UIColor.clear
         
         // setup navigation item for navigation bar
         let navItem = UINavigationItem(title: "Currently Reading")
         let backItem = UIBarButtonItem(
             image: UIImage(named: "chevron-down"),
             style: UIBarButtonItem.Style.done,
-            target: nil,
+            target: self,
             action: #selector(backWasTapped)
         )
         navItem.leftBarButtonItem = backItem
@@ -68,7 +68,7 @@ class MangaReaderViewController: UIViewController {
         toolbar.widthAnchor.constraint(equalTo: safeArea.widthAnchor).isActive = true
         
         // styling navigation bar
-        toolbar.barTintColor = UIColor.white
+        toolbar.barTintColor = UIColor.clear
         
         // setup barbutton items
         let rewindButton = UIBarButtonItem(
