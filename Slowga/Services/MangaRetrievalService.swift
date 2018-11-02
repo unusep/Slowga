@@ -25,9 +25,19 @@ class MangaRetrievalService {
         self.context = context
     }
     
-    // retrieves cover image
-    // calls callback with the path name of the file
-    // downloads and saves if not already downloaded
+    /// Gets currently reading manga from core data
+    ///
+    /// - Returns: currently reading manga cover if user is reading any manga. nil otherwise
+    public func getCurrentlyReadingManga() -> MangaCover? {
+        return nil
+    }
+    
+    /// Retrieves cover image, and calls callback with the path name of the file.
+    /// downloads and saves if not already downloaded
+    ///
+    /// - Parameters:
+    ///   - mangaCover: the mangaCover for which to get the cover image
+    ///   - callback: the callback that will be called with the file path of the image on completion
     public func getCoverImage(for mangaCover: MangaCover, onComplete callback: @escaping ((ImageFilePath?) -> Void)) {
         // use cached manga cover if already donwloaded
         if let imageFilePath = mangaCover.getLocalImageFilePath(), FileManager.default.fileExists(atPath: imageFilePath) {

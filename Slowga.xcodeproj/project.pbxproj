@@ -21,6 +21,7 @@
 		93436762216B765E00222E2E /* MangaReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93436761216B765E00222E2E /* MangaReaderViewController.swift */; };
 		9343676A216B76DF00222E2E /* MangaReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93436769216B76DF00222E2E /* MangaReaderView.swift */; };
 		93436772216B7B8000222E2E /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93436771216B7B8000222E2E /* RootTabBarViewController.swift */; };
+		9346EC9A218CBE58005A8500 /* MangaCover+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9346EC99218CBE58005A8500 /* MangaCover+CoreDataProperties.swift */; };
 		934AE91A218825C300F3533B /* MangaRetrievalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932637E8216D272C00017B72 /* MangaRetrievalService.swift */; };
 		934AE91B2188268100F3533B /* MangaSourceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935ACCCA216DC2BF00852588 /* MangaSourceAPI.swift */; };
 		934AE91E218827A800F3533B /* Manga.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93744EDA216CE87200E624F6 /* Manga.swift */; };
@@ -90,6 +91,7 @@
 		93436761216B765E00222E2E /* MangaReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaReaderViewController.swift; sourceTree = "<group>"; };
 		93436769216B76DF00222E2E /* MangaReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaReaderView.swift; sourceTree = "<group>"; };
 		93436771216B7B8000222E2E /* RootTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
+		9346EC99218CBE58005A8500 /* MangaCover+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MangaCover+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		935ACCCA216DC2BF00852588 /* MangaSourceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaSourceAPI.swift; sourceTree = "<group>"; };
 		935ACCD3216DC6E000852588 /* MangaChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaChapter.swift; sourceTree = "<group>"; };
 		935ACCD7216DD49400852588 /* MangaEdenSourceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaEdenSourceAPI.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 		93436757216B6CE400222E2E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9346EC99218CBE58005A8500 /* MangaCover+CoreDataProperties.swift */,
 				937AC7ED2188C7C300726BA2 /* MangaCover+CoreDataClass.swift */,
 				93744EDA216CE87200E624F6 /* Manga.swift */,
 				935ACCD3216DC6E000852588 /* MangaChapter.swift */,
@@ -547,6 +550,7 @@
 				935ACCD8216DD49400852588 /* MangaEdenSourceAPI.swift in Sources */,
 				93744EDB216CE87200E624F6 /* Manga.swift in Sources */,
 				9343676A216B76DF00222E2E /* MangaReaderView.swift in Sources */,
+				9346EC9A218CBE58005A8500 /* MangaCover+CoreDataProperties.swift in Sources */,
 				93436772216B7B8000222E2E /* RootTabBarViewController.swift in Sources */,
 				935ACCD4216DC6E000852588 /* MangaChapter.swift in Sources */,
 				9343675E216B6ECD00222E2E /* SearchViewController.swift in Sources */,

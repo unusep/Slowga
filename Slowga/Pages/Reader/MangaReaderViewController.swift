@@ -10,9 +10,20 @@ import UIKit
 
 
 class MangaReaderViewController: UIViewController {
+    var mangaCover: MangaCover!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+    }
+    
+    init(mangaCover: MangaCover) {
+        self.mangaCover = mangaCover
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
     @objc func backWasTapped(sender: UIButton) {

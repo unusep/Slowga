@@ -9,9 +9,8 @@
 import UIKit
 
 class RootTabBarViewController: UITabBarController, UITabBarControllerDelegate {
-    
     let dummyCurrentReadingVc = UIViewController()
-    
+    var mangaReaderViewController: MangaReaderViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +19,8 @@ class RootTabBarViewController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        if viewController == dummyCurrentReadingVc {
-            let mangaReaderController = MangaReaderViewController()
-            mangaReaderController.modalPresentationStyle = .overFullScreen
-            self.present(mangaReaderController, animated: true)
+        if viewController == dummyCurrentReadingVc, let vc = mangaReaderViewController {
+            self.present(vc, animated: true)
             return false
         } else {
             return true
@@ -42,7 +39,16 @@ class RootTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         searchViewController.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarItem.SystemItem.search, tag: 0)
         
         // TODO: only show dummy current reading vc if we are currently reading a manga
-        self.viewControllers = [homeViewController, dummyCurrentReadingVc, searchViewController]
+        var vcs: [UIViewController] = []
+        vcs.append(homeViewController)
+        if let currentlyReadingManga = AppDelegate.mangaRetrievalService.getCurrentlyReadingManga() {
+            mangaReaderViewController = MangaReaderViewController(mangaCover: currentlyReadingManga)
+            mangaReaderViewController?.modalPresentationStyle = .overFullScreen
+            vcs.append(mangaReaderViewController!)
+        }
+        vcs.append(searchViewController)
+        
+        self.viewControllers = vcs
         
         // default view controller
         self.selectedViewController = homeViewController
