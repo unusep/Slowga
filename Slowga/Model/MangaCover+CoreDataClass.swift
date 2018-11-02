@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 
 public class MangaCover: NSManagedObject {
@@ -19,5 +20,15 @@ public class MangaCover: NSManagedObject {
         let pathComponent = String(format: "Media/Manga/%@/%@", title, "cover_image")
         let fileURL = documentsURL.appendingPathComponent(pathComponent)
         return fileURL.path
+    }
+    
+    var image: UIImage? {
+        get {
+            if let filePath = self.getLocalImageFilePath() {
+                return UIImage(contentsOfFile: filePath)
+            } else {
+                return nil
+            }
+        }
     }
 }

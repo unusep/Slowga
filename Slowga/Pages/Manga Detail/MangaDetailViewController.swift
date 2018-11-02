@@ -20,7 +20,7 @@ class MangaDetailViewController: UIViewController {
     func setupView() {
         self.view.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
         
-        let detailView = MangaDetailView()
+        let detailView = MangaDetailView(mangaCover: mangaCover)
         self.view.addSubview(detailView)
         
         // layout detail view

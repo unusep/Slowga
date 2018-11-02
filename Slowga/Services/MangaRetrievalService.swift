@@ -26,7 +26,7 @@ class MangaRetrievalService {
     }
     
     // retrieves cover image
-    // calls callback with the name of the file
+    // calls callback with the path name of the file
     // downloads and saves if not already downloaded
     public func getCoverImage(for mangaCover: MangaCover, onComplete callback: @escaping ((ImageFilePath?) -> Void)) {
         // use cached manga cover if already donwloaded
